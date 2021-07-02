@@ -6,5 +6,8 @@ import { Order } from "../entity/Order";
 
 
 class OrderController{
+    public static createOrder = async (req, res,next) => {
+
+     }
 }
 export default OrderController;

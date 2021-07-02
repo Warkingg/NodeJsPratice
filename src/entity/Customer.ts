@@ -4,17 +4,19 @@ import {
   Column,
   JoinColumn,
   OneToOne,
+  Unique,
 } from "typeorm";
 import { Length, IsNotEmpty } from "class-validator";
 import { CreditCard } from "./CreditCard";
 import { Address } from "./Address";
 
 @Entity()
+@Unique(["customerId"])
 export class Customer {
   @PrimaryGeneratedColumn()
   customerId: number;
 
-  @Column()
+  @Column({nullable: true})
   @Length(4, 10)
   firstName: string;
 

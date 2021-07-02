@@ -1,4 +1,6 @@
 import { Router } from "express";
+import CustomerController from "../controllers/CustomerController";
+import OrderController from "../controllers/OrderController";
 import { CustomerService } from "../services/CustomerService";
 
 
@@ -6,7 +8,10 @@ import { CustomerService } from "../services/CustomerService";
 
 
   // Create a new user
-  router.post("/", CustomerService.newCustomer);
+  router.post("/create", CustomerController.createCustomer);
+
+  // Create a new order
+  router.post("/order", OrderController.createOrder);
 
 
   export default router;
